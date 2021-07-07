@@ -219,7 +219,7 @@ void list(FILE *db_file)
     c++;
   }
   /* TBD print total count */
-  printf("Total Entries :  %d\n", c);
+  printf("Total entries :  %d\n", c);
   free_entries(base);
 }
 
@@ -242,7 +242,7 @@ int delete (FILE *db_file, char *name)
     {
       prev = p;
       p = p->next;
-      if (strcmp(p->name, name) == 0)
+      if (p != NULL && strcmp(p->name, name) == 0)
       {
         prev->next = p->next;
         free(p);
